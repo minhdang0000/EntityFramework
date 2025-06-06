@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ef.Models
 {
-    public class ProductDbContext: DbContext
+    public class ShopContext: DbContext
     {
         public static readonly ILoggerFactory loggerFactory = LoggerFactory.Create(builder =>
         {
@@ -17,7 +17,8 @@ namespace ef.Models
             builder.AddConsole();
         });
         public DbSet<Product> products { get; set; }
-        private const string connectionString = "Server=DESKTOP-6FO9FCK\\SQLEXPRESS;Initial Catalog = data01;Trusted_Connection=yes;TrustServerCertificate=True";
+        public DbSet<Category> categories { get; set; }
+        private const string connectionString = "Server=DESKTOP-6FO9FCK\\SQLEXPRESS;Initial Catalog = shopdata;Trusted_Connection=yes;TrustServerCertificate=True";
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);

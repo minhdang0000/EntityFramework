@@ -9,16 +9,21 @@ using System.Threading.Tasks;
 
 namespace ef.Models
 {
-    [Table("product")]
+    [Table("Product")]
     public class Product
     {
         [Key]
         public int ProductId { get; set; }
         [Required]
         [StringLength(50)]
-        public string ProductName { get; set; }
-        [StringLength(50)]
-        public string Provider { get; set; }
-        public void PrintInfo() => Console.WriteLine($"{ProductId} - {ProductName} - {Provider}");
+        [Column("Tensanpham",TypeName="ntext")]
+        public string Name { get; set; }
+        [Column(TypeName="money")]
+        public decimal Price { get; set; }
+        public int CateId { get; set; }
+        // Foreign key
+        [ForeignKey("CateId")]
+        public Category Category { get; set; }
+        public void PrintInfo() => Console.WriteLine($"{ProductId} - {Name} - {Price} - {CateId}");
     }
 }
