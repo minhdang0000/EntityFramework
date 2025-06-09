@@ -19,5 +19,6 @@ namespace ef.Models
         public string Description { get; set; }
         // Collect Navigation
         public virtual List<Product> Products { get; set; }
+        public CategoryDetail categoryDetail { get; set; }
     }
 }

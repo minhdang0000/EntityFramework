@@ -52,19 +52,10 @@ namespace ef
         }
         static void Main(string[] args)
         {
-            //DropDatabase();
-            //CreateDatabase();
+            DropDatabase();
+            CreateDatabase();
             //InsertData();
-            using var dbcontext = new ShopContext();
-            var kq = from p in dbcontext.products
-                     join c in dbcontext.categories on p.CateId equals c.CategoryId
-                     select new
-                     {
-                         ten = p.Name,
-                         danhmuc = c.Name,
-                         gia = p.Price
-                     };
-            kq.ToList().ForEach(abc => Console.WriteLine(abc));
+            
         }
     }
 }
