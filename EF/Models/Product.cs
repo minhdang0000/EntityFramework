@@ -23,7 +23,12 @@ namespace ef.Models
         public int CateId { get; set; }
         // Foreign key
         [ForeignKey("CateId")]
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
+        public int? CateId2 { get; set; }
+        // Foreign key
+        [ForeignKey("CateId2")]
+        [InverseProperty("Products")]
+        public virtual Category Category2 { get; set; }
         public void PrintInfo() => Console.WriteLine($"{ProductId} - {Name} - {Price} - {CateId}");
     }
 }

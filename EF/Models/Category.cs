@@ -17,5 +17,7 @@ namespace ef.Models
         public string Name { get; set; }
         [Column(TypeName ="ntext")]
         public string Description { get; set; }
+        // Collect Navigation
+        public virtual List<Product> Products { get; set; }
     }
 }
