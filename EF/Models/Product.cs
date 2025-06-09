@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace ef.Models
 {
-    [Table("Product")]
+    //[Table("Product")]
     public class Product
     {
-        [Key]
+        //[Key]
         public int ProductId { get; set; }
         [Required]
         [StringLength(50)]
@@ -22,7 +22,7 @@ namespace ef.Models
         public decimal Price { get; set; }
         public int CateId { get; set; }
         // Foreign key
-        [ForeignKey("CateId")]
+        //[ForeignKey("CateId")]
         public virtual Category Category { get; set; }
         public int? CateId2 { get; set; }
         // Foreign key
